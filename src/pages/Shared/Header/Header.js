@@ -51,7 +51,7 @@ const Header = () => {
             </NavDropdown>
           </Nav>
           <Nav>
-            <Nav.Link eventKey={2} href="#memes">
+            <div>
               {user?.uid ? (
                 <>
                   {user?.photoURL ? (
@@ -83,7 +83,7 @@ const Header = () => {
                   </Link>
                 </>
               )}
-            </Nav.Link>
+            </div>
           </Nav>
           <div className="d-lg-none">
             <LeftSideNav></LeftSideNav>

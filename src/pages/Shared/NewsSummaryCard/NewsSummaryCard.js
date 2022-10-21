@@ -6,16 +6,7 @@ import { FaEye, FaRegBookmark, FaShareAlt, FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const NewsSummaryCard = ({ news }) => {
-  const {
-    _id,
-    author,
-    details,
-    image_url,
-    rating,
-    title,
-    total_view,
-    thumbnail_url,
-  } = news;
+  const { _id, author, details, image_url, rating, title, total_view } = news;
   return (
     <div>
       <Card className="mb-4">
@@ -42,12 +33,12 @@ const NewsSummaryCard = ({ news }) => {
           <Card.Title>{title}</Card.Title>
           <Card.Text>
             {details.length > 250 ? (
-              <p>
+              <>
                 {details.slice(0, 250) + "..."}{" "}
                 <Link to={`/news/${_id}`}>Read More</Link>
-              </p>
+              </>
             ) : (
-              <p>{details}</p>
+              <>{details}</>
             )}
           </Card.Text>
         </Card.Body>

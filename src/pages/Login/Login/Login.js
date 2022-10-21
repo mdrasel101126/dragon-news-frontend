@@ -7,7 +7,7 @@ import { AuthContext } from "../../../AuthPorvider/AuthProvider";
 import toast from "react-hot-toast";
 
 const Login = () => {
-  const { loginUser } = useContext(AuthContext);
+  const { loginUser, setLoading } = useContext(AuthContext);
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
@@ -36,6 +36,9 @@ const Login = () => {
         const errorMessage = error.message;
         console.log(errorMessage);
         setError(errorMessage);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   };
   return (
